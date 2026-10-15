@@ -1,0 +1,2251 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mahmoud Mansour | Data Science, AI &amp; Automation Engineer</title>
+<meta content="Mahmoud Mansour — Data Science &amp; AI Engineer specializing in Machine Learning, Computer Vision, NLP, workflow automation, and n8n." name="description"/>
+<style>
+    :root {
+      --bg: #f8fbff;
+      --white: #ffffff;
+      --text: #102033;
+      --muted: #5b6b80;
+      --blue: #2563eb;
+      --blue-2: #38bdf8;
+      --blue-3: #dbeafe;
+      --border: #d9e7ff;
+      --shadow: 0 18px 45px rgba(37, 99, 235, 0.14);
+      --radius: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 18%, rgba(37, 99, 235, 0.16), transparent 28%),
+        radial-gradient(circle at 85% 12%, rgba(56, 189, 248, 0.22), transparent 26%),
+        linear-gradient(135deg, #ffffff 0%, #eff6ff 48%, #e0f2fe 100%);
+      line-height: 1.7;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-weight: 900;
+      color: var(--blue);
+      letter-spacing: 0.4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      min-height: 88vh;
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 45px;
+      align-items: center;
+      padding: 70px 0;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue);
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.07;
+      margin-bottom: 20px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--blue), var(--blue-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 680px;
+      margin-bottom: 28px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-weight: 800;
+      border: 1px solid var(--border);
+      transition: 0.25s ease;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      color: white;
+      border: none;
+    }
+
+    .btn.secondary {
+      background: white;
+      color: var(--blue);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .profile-card {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .photo-frame {
+      width: 178px;
+      height: 178px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      padding: 6px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      box-shadow: 0 16px 35px rgba(37, 99, 235, 0.2);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      background: #eaf3ff;
+      border: 5px solid white;
+    }
+
+    .image-note {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: -8px;
+      margin-bottom: 18px;
+    }
+
+    .profile-card h2 {
+      font-size: 26px;
+      margin-bottom: 6px;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .stat {
+      background: linear-gradient(180deg, #ffffff, #f1f7ff);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px 10px;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--blue);
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 32px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.06);
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: rgba(37, 99, 235, 0.35);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      margin-top: 12px;
+    }
+
+    .skill-list,
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 12px 15px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #ffffff, #eaf4ff);
+      border: 1px solid var(--border);
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .tag {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--blue);
+      background: var(--blue-3);
+      border: 1px solid var(--border);
+      font-weight: 800;
+    }
+
+    .tag-row {
+      margin-top: 16px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--blue);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 8px 22px rgba(37, 99, 235, 0.06);
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, #ffffff, #dbeafe 55%, #bae6fd);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 38px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin: 12px auto 24px;
+      max-width: 650px;
+    }
+
+    footer {
+      padding: 26px 0;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.65);
+      font-size: 14px;
+    }
+
+
+    .bubbles {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .bubbles span {
+      position: absolute;
+      bottom: -160px;
+      display: block;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 32% 28%, rgba(255,255,255,0.95), rgba(186,230,253,0.55) 34%, rgba(37,99,235,0.12) 72%);
+      border: 1px solid rgba(37, 99, 235, 0.12);
+      box-shadow:
+        inset 0 0 18px rgba(255,255,255,0.9),
+        0 18px 48px rgba(37, 99, 235, 0.10);
+      animation: floatBubble linear infinite;
+      opacity: 0.58;
+    }
+
+    .bubbles span:nth-child(1) { width: 95px; height: 95px; left: 6%; animation-duration: 22s; animation-delay: 0s; }
+    .bubbles span:nth-child(2) { width: 48px; height: 48px; left: 18%; animation-duration: 17s; animation-delay: 2s; }
+    .bubbles span:nth-child(3) { width: 130px; height: 130px; left: 32%; animation-duration: 25s; animation-delay: 4s; }
+    .bubbles span:nth-child(4) { width: 65px; height: 65px; left: 47%; animation-duration: 19s; animation-delay: 1s; }
+    .bubbles span:nth-child(5) { width: 115px; height: 115px; left: 62%; animation-duration: 28s; animation-delay: 5s; }
+    .bubbles span:nth-child(6) { width: 52px; height: 52px; left: 74%; animation-duration: 18s; animation-delay: 3s; }
+    .bubbles span:nth-child(7) { width: 145px; height: 145px; left: 86%; animation-duration: 30s; animation-delay: 6s; }
+    .bubbles span:nth-child(8) { width: 78px; height: 78px; left: 92%; animation-duration: 21s; animation-delay: 1.5s; }
+
+    @keyframes floatBubble {
+      0% { transform: translateY(0) translateX(0) scale(0.92); opacity: 0; }
+      10% { opacity: 0.55; }
+      50% { transform: translateY(-55vh) translateX(36px) scale(1.04); }
+      90% { opacity: 0.48; }
+      100% { transform: translateY(-115vh) translateX(-28px) scale(1.16); opacity: 0; }
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(37, 99, 235, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 99, 235, 0.045) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent 88%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      width: 620px;
+      height: 620px;
+      right: -210px;
+      top: 80px;
+      z-index: -3;
+      pointer-events: none;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.26), rgba(37, 99, 235, 0.08), transparent 68%);
+      filter: blur(6px);
+    }
+
+    .hero { position: relative; }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: min(760px, 92vw);
+      height: 260px;
+      left: 50%;
+      top: 110px;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, rgba(37, 99, 235, 0.06), rgba(56, 189, 248, 0.14), rgba(37, 99, 235, 0.06));
+      border-radius: 999px;
+      filter: blur(42px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 72px;
+      height: 4px;
+      margin-top: 10px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--blue), var(--blue-2));
+    }
+
+    .contact-box .section-title::after {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 30px auto 8px;
+    }
+
+    .contact-icon {
+      width: 62px;
+      height: 62px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(217, 231, 255, 0.95);
+      color: var(--blue);
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.13);
+      transition: 0.25s ease;
+    }
+
+    .contact-icon:hover {
+      transform: translateY(-6px) scale(1.04);
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      box-shadow: 0 20px 45px rgba(37, 99, 235, 0.24);
+    }
+
+    .contact-icon svg {
+      width: 27px;
+      height: 27px;
+      fill: currentColor;
+    }
+
+    .contact-mini-text {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+
+    /* Final Projects Cards + Beautiful Details Modal */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(217, 231, 255, 0.95);
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: 0 14px 35px rgba(37, 99, 235, 0.08);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      right: -85px;
+      top: -85px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.25), rgba(37, 99, 235, 0.08), transparent 70%);
+      transition: transform 0.28s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(37, 99, 235, 0.32);
+      box-shadow: 0 24px 55px rgba(37, 99, 235, 0.16);
+    }
+
+    .project-card:hover::before {
+      transform: scale(1.25);
+    }
+
+    .project-card h3,
+    .project-card p,
+    .project-card ul,
+    .project-card .tag-row,
+    .project-card .project-actions {
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-card h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .project-card p,
+    .project-card li {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .project-card ul {
+      padding-left: 18px;
+      margin-top: 12px;
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .project-btn,
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      border: none;
+      padding: 11px 15px;
+      border-radius: 14px;
+      font-weight: 900;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .project-btn {
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      color: #ffffff;
+      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.16);
+    }
+
+    .project-link {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--border);
+      color: var(--blue);
+    }
+
+    .project-btn:hover,
+    .project-link:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .details-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1200;
+      background: rgba(15, 23, 42, 0.58);
+      backdrop-filter: blur(12px);
+      padding: 24px;
+      overflow-y: auto;
+    }
+
+    .details-modal.active {
+      display: block;
+    }
+
+    .details-content {
+      width: min(1120px, 96%);
+      margin: 36px auto;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(217, 231, 255, 0.95);
+      border-radius: 32px;
+      box-shadow: 0 30px 85px rgba(15, 23, 42, 0.24);
+      padding: 30px;
+      position: relative;
+      animation: modalSlideZoom 0.38s cubic-bezier(.2,.8,.2,1);
+    }
+
+    @keyframes modalSlideZoom {
+      from {
+        opacity: 0;
+        transform: translateY(28px) scale(0.96);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 15px;
+      background: var(--blue-3);
+      color: var(--blue);
+      font-size: 25px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .modal-close:hover {
+      transform: rotate(90deg) scale(1.05);
+      color: white;
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+    }
+
+    .details-content h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      padding-right: 52px;
+    }
+
+    .details-content p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .details-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .details-box {
+      background: linear-gradient(135deg, #ffffff, #eff6ff);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .details-box h3 {
+      margin-bottom: 10px;
+    }
+
+    .details-box ul {
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .gallery-title {
+      margin: 28px 0 14px;
+      color: var(--text);
+      font-size: 22px;
+    }
+
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .project-gallery.one-image {
+      grid-template-columns: 1fr;
+    }
+
+    .gallery-card {
+      background: linear-gradient(135deg, #ffffff, #eff6ff);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.10);
+      transform: translateY(0);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 45px rgba(37, 99, 235, 0.18);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      background: #eaf4ff;
+    }
+
+    .project-gallery.one-image .gallery-card img {
+      height: auto;
+      max-height: 620px;
+      object-fit: contain;
+    }
+
+    .gallery-caption {
+      padding: 12px 14px;
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .upload-note {
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(37, 99, 235, 0.08);
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    @media (max-width: 850px) {
+      .projects-grid,
+      .details-layout,
+      .project-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-card img {
+        height: 210px;
+      }
+
+      .details-content {
+        padding: 22px;
+      }
+    }
+
+
+    /* Restored Training + Work Experience Sections */
+    .training-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .training-card {
+      position: relative;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(217, 231, 255, 0.95);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 18px 42px rgba(37, 99, 235, 0.10);
+      transition: 0.25s ease;
+    }
+
+    .training-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 55px rgba(37, 99, 235, 0.18);
+    }
+
+    .training-card::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      right: -70px;
+      top: -70px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.26), rgba(37, 99, 235, 0.08), transparent 70%);
+    }
+
+    .training-card.featured {
+      border: 2px solid rgba(37, 99, 235, 0.24);
+      background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(239,246,255,0.92));
+    }
+
+    .training-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: var(--blue);
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid var(--border);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .training-card h3,
+    .training-card p,
+    .training-meta,
+    .training-card .project-actions {
+      position: relative;
+      z-index: 1;
+    }
+
+    .training-card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .training-card p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .training-meta {
+      display: grid;
+      gap: 8px;
+      margin-top: 16px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .training-meta span strong {
+      color: var(--blue);
+    }
+
+    .certificate-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1300;
+      background: rgba(15, 23, 42, 0.62);
+      backdrop-filter: blur(10px);
+      padding: 24px;
+      overflow-y: auto;
+    }
+
+    .certificate-modal.active {
+      display: block;
+    }
+
+    .certificate-content {
+      width: min(900px, 96%);
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(217, 231, 255, 0.95);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: 0 30px 80px rgba(15, 23, 42, 0.24);
+      position: relative;
+      text-align: center;
+      animation: modalSlideZoom 0.38s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .certificate-content h2 {
+      margin-bottom: 16px;
+      padding-right: 48px;
+    }
+
+    .certificate-content img {
+      width: 100%;
+      max-height: 640px;
+      object-fit: contain;
+      border-radius: 20px;
+      background: #eff6ff;
+      border: 1px solid var(--border);
+    }
+
+    .certificate-note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .experience-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .experience-summary {
+      background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(239,246,255,0.88));
+      border: 1px solid rgba(217, 231, 255, 0.95);
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: 0 18px 42px rgba(37, 99, 235, 0.10);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .experience-summary::before {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      right: -80px;
+      top: -80px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.26), rgba(37, 99, 235, 0.08), transparent 70%);
+    }
+
+    .experience-summary h3,
+    .experience-summary p,
+    .experience-points,
+    .experience-tags {
+      position: relative;
+      z-index: 1;
+    }
+
+    .experience-summary h3 {
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .experience-summary p {
+      color: var(--muted);
+    }
+
+    .experience-points {
+      margin-top: 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .experience-point {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .experience-point span {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 9px;
+      color: white;
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .platform-card {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(217, 231, 255, 0.95);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.08);
+      transition: 0.25s ease;
+    }
+
+    .platform-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 22px 48px rgba(37, 99, 235, 0.16);
+    }
+
+    .platform-head {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .platform-logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.18);
+      font-weight: 900;
+      font-size: 20px;
+    }
+
+    .platform-logo svg {
+      width: 26px;
+      height: 26px;
+      fill: currentColor;
+    }
+
+    .platform-card h3 {
+      font-size: 19px;
+      margin-bottom: 2px;
+    }
+
+    .platform-card small {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .platform-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .experience-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+.usp-highlight-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(239,246,255,0.92));
+  border: 1px solid rgba(217, 231, 255, 0.95);
+  border-radius: 30px;
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 18px 42px rgba(37, 99, 235, 0.10);
+}
+
+.usp-highlight-card::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  right: -90px;
+  top: -90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.28), rgba(37, 99, 235, 0.08), transparent 70%);
+}
+
+.usp-badge {
+  display: inline-flex;
+  padding: 7px 13px;
+  border-radius: 999px;
+  color: var(--blue);
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid var(--border);
+  font-size: 13px;
+  font-weight: 900;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.usp-highlight-card h3,
+.usp-highlight-card p {
+  position: relative;
+  z-index: 1;
+}
+
+.usp-highlight-card h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.usp-highlight-card p {
+  color: var(--muted);
+  max-width: 920px;
+}
+
+.usp-question-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.usp-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(217, 231, 255, 0.95);
+  border-radius: 26px;
+  padding: 26px;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.08);
+  transition: 0.25s ease;
+}
+
+.usp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 48px rgba(37, 99, 235, 0.16);
+}
+
+.usp-card.featured {
+  background: linear-gradient(135deg, rgba(37,99,235,0.10), rgba(56,189,248,0.12), rgba(255,255,255,0.92));
+  border-color: rgba(37, 99, 235, 0.25);
+}
+
+.usp-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--blue), var(--blue-2));
+  color: #ffffff;
+  font-weight: 900;
+  margin-bottom: 16px;
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.18);
+}
+
+.usp-card h3 {
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.usp-card p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+@media (max-width: 900px) {
+  .usp-question-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+    @media (max-width: 860px) {
+      .experience-layout,
+      .platform-grid,
+      .training-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 55px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        text-align: center;
+      }
+    }
+  
+    /* Added theme controls: original font sizes and layout dimensions are intentionally preserved. */
+    :root { --bg: #f7f8f5; --white: #ffffff; --text: #1d2925; --muted: #65736c; --blue: #168a78; --blue-2: #76cbbb; --blue-3: #d9f0e9; --border: #d7e5df; --shadow: 0 18px 45px rgba(16, 104, 87, 0.13); }
+    body { background: radial-gradient(circle at 12% 18%, rgba(22,138,120,.12), transparent 28%), radial-gradient(circle at 85% 12%, rgba(118,203,187,.18), transparent 26%), linear-gradient(135deg,#fff 0%,#f2f8f5 48%,#e0f1eb 100%); }
+    header { background: rgba(255,255,255,.86); }
+    .theme-controls { display:flex; align-items:center; gap:8px; }
+    .theme-controls button { border:1px solid var(--border); background:var(--white); color:var(--text); border-radius:999px; padding:8px 12px; cursor:pointer; font:inherit; font-weight:700; }
+    html[data-theme="dark"] { --bg:#111815; --white:#1a2420; --text:#eef6f1; --muted:#b0beb6; --blue:#6bd9c0; --blue-2:#9ae8d7; --blue-3:#203d34; --border:#33463c; --shadow:0 18px 45px rgba(0,0,0,.24); }
+    html[data-theme="dark"] body { background:radial-gradient(circle at 12% 18%,rgba(107,217,192,.10),transparent 28%),radial-gradient(circle at 85% 12%,rgba(76,153,132,.13),transparent 26%),linear-gradient(135deg,#101613 0%,#17211c 48%,#1b2d25 100%); }
+    html[data-theme="dark"] header { background:rgba(17,24,21,.88); }
+    html[data-theme="dark"] .card, html[data-theme="dark"] .profile-card, html[data-theme="dark"] .project-card, html[data-theme="dark"] .usp-highlight-card, html[data-theme="dark"] .usp-card, html[data-theme="dark"] .modal-content, html[data-theme="dark"] .certificate-content { background:var(--white); color:var(--text); border-color:var(--border); }
+    html[data-theme="dark"] .btn.secondary, html[data-theme="dark"] .theme-controls button { background:var(--white); color:var(--text); border-color:var(--border); }
+    html[dir="rtl"] body { direction:rtl; }
+    html[dir="rtl"] .nav-links { direction:rtl; }
+    html[dir="rtl"] .hero, html[dir="rtl"] .grid, html[dir="rtl"] .projects-grid { direction:rtl; }
+
+    /* Modal readability fix: keep foreground and background colors in the same theme. */
+    .details-content {
+      background: var(--white) !important;
+      color: var(--text) !important;
+      border-color: var(--border) !important;
+    }
+    .details-content h2,
+    .details-content h3,
+    .details-content .gallery-title,
+    .details-content strong {
+      color: var(--text) !important;
+    }
+    .details-content p,
+    .details-content li,
+    .details-content .gallery-caption {
+      color: var(--muted) !important;
+    }
+    .details-box {
+      background: var(--bg) !important;
+      color: var(--text) !important;
+      border-color: var(--border) !important;
+    }
+    .details-box h3 { color: var(--text) !important; }
+    .details-box ul { color: var(--muted) !important; }
+    .gallery-card {
+      background: var(--bg) !important;
+      border-color: var(--border) !important;
+    }
+    .gallery-caption {
+      background: var(--white) !important;
+      color: var(--text) !important;
+    }
+    .modal-close {
+      background: var(--blue-3) !important;
+      color: var(--text) !important;
+    }
+    html[data-theme="dark"] .details-content {
+      background: #18241f !important;
+      color: #f1f7f3 !important;
+      border-color: #3a5147 !important;
+    }
+    html[data-theme="dark"] .details-content h2,
+    html[data-theme="dark"] .details-content h3,
+    html[data-theme="dark"] .details-content .gallery-title,
+    html[data-theme="dark"] .details-content strong,
+    html[data-theme="dark"] .gallery-caption {
+      color: #f1f7f3 !important;
+    }
+    html[data-theme="dark"] .details-content p,
+    html[data-theme="dark"] .details-content li {
+      color: #c1d0c7 !important;
+    }
+    html[data-theme="dark"] .details-box,
+    html[data-theme="dark"] .gallery-card {
+      background: #202f28 !important;
+      color: #f1f7f3 !important;
+      border-color: #3a5147 !important;
+    }
+    html[data-theme="dark"] .gallery-caption { background: #18241f !important; }
+
+    /* Light theme readability refinements: stronger contrast on project cards and tags. */
+    html[data-theme="light"] .project-card {
+      background: #ffffff;
+      border-color: #cbded7;
+      box-shadow: 0 14px 35px rgba(25, 75, 63, 0.10);
+    }
+    html[data-theme="light"] .project-card h3 { color: #18352d; }
+    html[data-theme="light"] .project-card p,
+    html[data-theme="light"] .project-card li { color: #43574f; }
+    html[data-theme="light"] .project-card .tag {
+      background: #e1f4ed;
+      color: #176b58;
+      border-color: #b8dfd1;
+    }
+    html[data-theme="light"] .project-card .btn.secondary {
+      background: #f2faf6;
+      color: #175b4c;
+      border-color: #b8d9cd;
+    }
+
+    @media (max-width: 850px) { .theme-controls { margin-left:auto; } }
+
+    /* Project details: high-contrast, readable in both themes */
+    .project-card-preview {
+      min-height: 150px; border-radius: 18px; padding: 22px; margin-bottom: 16px;
+      display: flex; flex-direction: column; justify-content: flex-end; gap: 7px;
+      background: linear-gradient(135deg, #e0f2fe, #f8fafc 55%, #dbeafe);
+      border: 1px solid #cbdcf2; color: #102033;
+    }
+    .project-card-preview span, .project-number { font-size: 12px; letter-spacing: 1.4px; font-weight: 800; color: #2563eb; }
+    .project-card-preview strong { font-size: 20px; line-height: 1.35; }
+    .project-card-preview small { color: #52647a; font-size: 12px; }
+    .project-detail-actions { display:flex; gap:12px; margin: 14px 0 22px; }
+    .github-project-link { display:inline-flex; align-items:center; gap:9px; padding: 11px 16px; border-radius: 12px; background:#172b24; color:#fff !important; font-weight:800; }
+    .github-project-link svg { width:20px; height:20px; }
+    .details-content .details-box { color:#102033; background:linear-gradient(135deg,#fff,#f0f6ff); }
+    .details-content .details-box h3 { color:#102033; }
+    .details-content .details-box p, .details-content .details-box li { color:#46566b; }
+    .details-content .details-box ol { padding-left:22px; }
+    .details-content .details-box li { margin-bottom:7px; }
+    .team-heading { margin-top:22px; }
+    .project-image-slot { position:relative; min-height:180px; overflow:hidden; border:1px solid #cbd5e1; border-radius:16px; background:#edf4fc; display:flex; align-items:center; justify-content:center; }
+    .project-image-slot img { width:100%; height:100%; min-height:180px; object-fit:cover; position:absolute; inset:0; }
+    .project-image-slot span { padding:18px; text-align:center; color:#52647a; font-size:13px; }
+    .project-image-slot code { color:#1d4ed8; }
+    html[data-theme="dark"] .project-card-preview { background:linear-gradient(135deg,#172b3d,#1e293b); border-color:#334155; color:#f8fafc; }
+    html[data-theme="dark"] .project-card-preview small { color:#cbd5e1; }
+    html[data-theme="dark"] .details-content { background:#111c2b; border-color:#334155; color:#f8fafc; }
+    html[data-theme="dark"] .details-content h2, html[data-theme="dark"] .details-content .gallery-title { color:#f8fafc; }
+    html[data-theme="dark"] .details-content .details-box { background:linear-gradient(135deg,#172436,#1e293b); border-color:#334155; color:#f8fafc; }
+    html[data-theme="dark"] .details-content .details-box h3 { color:#f8fafc; }
+    html[data-theme="dark"] .details-content .details-box p, html[data-theme="dark"] .details-content .details-box li { color:#d2dbea; }
+    html[data-theme="dark"] .project-image-slot { background:#1e293b; border-color:#475569; }
+    html[data-theme="dark"] .project-image-slot span { color:#cbd5e1; }
+    @media (max-width:700px) {
+      .details-layout { grid-template-columns:1fr !important; }
+      .project-gallery { grid-template-columns:1fr !important; }
+      .project-card-preview strong { font-size:18px; }
+    }
+
+  
+    /* Polished project team cards */
+    .team-members { display:grid; grid-template-columns:repeat(auto-fit,minmax(145px,1fr)); gap:10px; margin:12px 0 4px; }
+    .team-member { display:flex; flex-direction:column; gap:4px; padding:12px 14px; border:1px solid var(--border); border-radius:14px; background:rgba(255,255,255,.72); box-shadow:0 4px 14px rgba(15,23,42,.045); min-width:0; }
+    .team-member b { color:var(--text); font-size:13px; line-height:1.35; overflow-wrap:anywhere; }
+    .team-member small { color:var(--muted); font-size:11px; line-height:1.4; }
+    .team-heading { margin-top:20px; padding-top:14px; border-top:1px solid var(--border); letter-spacing:.01em; }
+    html[data-theme="dark"] .team-member { background:rgba(15,23,42,.5); }
+
+</style>
+<style id="portfolio-polish-overrides">
+/* Clear, consistent project detail layout */
+.details-content .details-layout{align-items:stretch;gap:22px}
+.details-content .details-box{min-width:0}
+.details-content .workflow-heading{margin:0 0 16px;color:var(--accent,#7c5cff);font-size:1.12rem;letter-spacing:.01em}
+.details-content .workflow-steps{list-style:none;counter-reset:workflow;display:grid;gap:10px;margin:0;padding:0}
+.details-content .workflow-steps li{counter-increment:workflow;position:relative;display:flex;align-items:flex-start;gap:12px;padding:12px 14px 12px 12px;border:1px solid rgba(127,127,127,.22);border-radius:12px;line-height:1.55;background:rgba(127,127,127,.055);color:inherit}
+.details-content .workflow-steps li:before{content:counter(workflow,decimal-leading-zero);display:inline-flex;flex:0 0 30px;width:30px;height:30px;align-items:center;justify-content:center;border-radius:9px;background:rgba(124,92,255,.14);color:var(--accent,#7c5cff);font-size:.76rem;font-weight:800}
+.details-content .team-heading{margin-top:24px;margin-bottom:12px}
+.details-content .team-members{display:flex;flex-wrap:wrap;gap:9px}
+.details-content .team-member{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:9px 13px;border:1px solid rgba(127,127,127,.25);border-radius:999px;background:rgba(127,127,127,.07);box-shadow:0 3px 12px rgba(0,0,0,.035)}
+.details-content .team-member b{font-size:.9rem;font-weight:700;line-height:1.3}
+.details-content .team-member small{display:none}
+@media(max-width:650px){.details-content .details-layout{grid-template-columns:minmax(0,1fr)}.details-content .workflow-steps li{padding:10px}.details-content .team-member{padding:8px 11px}}
+</style>
+<style>
+
+    /* Mahmoud's signature palette: soft lilac, ink, and warm coral. */
+    :root {
+      --bg: #fbf9ff; --white: #ffffff; --text: #251d35; --muted: #716982;
+      --blue: #7656d8; --blue-2: #f28b78; --blue-3: #eee8ff; --border: #e4dcf5;
+      --shadow: 0 18px 45px rgba(83, 57, 139, .12);
+    }
+    body { background: radial-gradient(circle at 10% 12%, rgba(118,86,216,.10), transparent 30%), radial-gradient(circle at 88% 18%, rgba(242,139,120,.13), transparent 25%), linear-gradient(135deg,#fff 0%,#fbf8ff 52%,#f8f0ff 100%); }
+    header { background: rgba(255,255,255,.88); border-bottom-color: #e9e1f6; }
+    .logo, .nav-links a:hover, .project-number, .project-card-preview span { color: #7656d8 !important; }
+    .btn.primary, .project-btn:not(.github-project-link) { background: linear-gradient(135deg,#7656d8,#9879ed) !important; color: #fff !important; }
+    .btn.secondary, .theme-controls button { border-color: #dfd4f5 !important; }
+    .tag, .team-member { background: #f1ecff !important; color: #5b43ad !important; border-color: #e1d7fb !important; }
+    .project-card-preview { background: linear-gradient(135deg,#fff,#f4efff 65%,#fff1ed) !important; border-color: #e4dcf5 !important; color: #251d35 !important; }
+    .project-image-slot { background: #f7f3ff !important; border-color: #e1d7f5 !important; }
+    .github-project-link { background: #2b2340 !important; color: #fff !important; }
+    .details-content .details-box { background: linear-gradient(135deg,#fff,#f8f4ff) !important; border-color: #e4dcf5 !important; color: #251d35 !important; }
+    .details-content .details-box h3 { color: #5b43ad !important; }
+    html[data-theme="dark"] { --bg:#171322; --white:#211b30; --text:#f7f2ff; --muted:#c1b8d2; --blue:#b7a0ff; --blue-2:#ffad9c; --blue-3:#35294d; --border:#433657; --shadow:0 18px 45px rgba(0,0,0,.28); }
+    html[data-theme="dark"] body { background: radial-gradient(circle at 10% 12%,rgba(118,86,216,.16),transparent 30%),radial-gradient(circle at 88% 18%,rgba(242,139,120,.10),transparent 25%),linear-gradient(135deg,#171322 0%,#201a2d 55%,#2a2036 100%); }
+    html[data-theme="dark"] .project-card-preview { background:linear-gradient(135deg,#251d35,#302442) !important; color:#f7f2ff !important; border-color:#433657 !important; }
+    html[data-theme="dark"] .details-content .details-box { background:linear-gradient(135deg,#211b30,#2a2239) !important; color:#f7f2ff !important; border-color:#433657 !important; }
+    html[data-theme="dark"] .tag, html[data-theme="dark"] .team-member { background:#35294d !important; color:#e5dcff !important; border-color:#51416b !important; }
+
+</style>
+</head>
+<body>
+<div aria-hidden="true" class="bubbles">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+<header>
+<div class="container">
+<nav>
+<a class="logo" href="#home">Mahmoud Mansour</a>
+<div class="theme-controls"><button aria-label="Switch theme" id="themeToggle" type="button">Dark mode</button></div>
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#usp">USP</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#internships">Training</a>
+<a href="#experience">Experience</a>
+<a href="#workflow">Workflow</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</div>
+</header>
+<main>
+<section class="hero container" id="home">
+<div>
+<div class="badge">AI Engineer </div>
+<div class="badge">Data Analysis </div>
+<h1>Hi, I'm Mahmoud Mansour</h1>
+<p>
+          AI Engineer &amp; Freelance Python Developer specializing in data science and machine learning. I deliver practical AI and data-driven solutions, transforming raw data into meaningful insights and intelligent applications across data analysis, computer vision, Arabic NLP, and automation.
+        </p>
+<div class="buttons">
+<a class="btn primary" href="#projects">View Projects</a>
+<a class="btn secondary" href="#contact">Contact Me</a>
+<a class="btn secondary" href="https://github.com/israa101" rel="noopener" target="_blank">GitHub</a>
+</div>
+</div>
+<aside class="profile-card">
+<!--
+          ADD YOUR IMAGE HERE:
+          1. Create a folder in your GitHub repository called: assets
+          2. Upload your photo inside it and name it: profile.jpg
+          3. The line below will automatically show it:
+             <img src="assets/profile.jpg" alt="Mahmoud Mansour profile photo" />
+        -->
+<div class="photo-frame">
+<img alt="Mahmoud Mansour profile photo" src="assets/profile.jpg"/>
+</div>
+<h2>Data Science &amp; AI Engineer </h2>
+<p>Python • Machine Learning • Computer Vision • NLP • Data Analysis • Building Scalable AI Solutions</p>
+</aside>
+</section>
+<section id="about">
+<div class="container">
+<h2 class="section-title">About Me</h2>
+<p class="section-subtitle">I’m a Data Science &amp; AI Engineer focused on building practical, scalable solutions with machine learning, computer vision, and natural language processing.</p>
+<div class="grid grid-2">
+<div class="card">
+<h3>Who I Am</h3>
+<p>I’m also interested in workflow automation and connecting AI tools to real-world processes using n8n, APIs, and Python.</p>
+</div>
+<div class="card">
+<h3>My Data Analysis Track</h3>
+<p>
+              My work focuses on data analysis, machine learning, computer vision, natural language processing — especially Arabic NLP — cybersecurity AI, recommender systems, and intelligent applications. I turn raw data into reliable workflows and useful results.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<section id="usp">
+<div class="container">
+<h2 class="section-title">What Makes Me Different</h2>
+<p class="section-subtitle">
+      My approach combines analytical thinking with hands-on AI development, from understanding the data to building, evaluating, and explaining a practical solution.
+    </p>
+<div class="usp-highlight-card">
+<div class="usp-badge">My USP</div>
+<h3>AI Mindset + End-to-End Building</h3>
+<p>
+        I do more than train a model. I explore the problem, prepare the data, select a suitable approach, evaluate the result, and communicate what the solution can — and cannot — do.
+      </p>
+</div>
+<div class="usp-question-grid">
+<div class="usp-card">
+<div class="usp-icon">01</div>
+<h3>What Problems Need</h3>
+<p>
+          Real problems need thoughtful data preparation, reliable analysis, and AI systems that produce understandable and useful outcomes.
+        </p>
+</div>
+<div class="usp-card featured">
+<div class="usp-icon">02</div>
+<h3>What I Enjoy Building</h3>
+<p>
+          I work with Python and data workflows, explore machine learning approaches, evaluate models, and build projects in computer vision, NLP, and intelligent systems.
+        </p>
+</div>
+<div class="usp-card">
+<div class="usp-icon">03</div>
+<h3>How I Keep Improving</h3>
+<p>
+          I keep learning through hands-on projects, documentation, research, experimentation, and collaboration — with an emphasis on reproducible work.
+        </p>
+</div>
+</div>
+</div>
+</section>
+<section id="skills">
+<div class="container">
+<h2 class="section-title">Skills &amp; Tools</h2>
+<p class="section-subtitle">Tools and technologies I use to build data-driven applications and practical AI solutions.</p>
+<div class="grid grid-2">
+<div class="card">
+<h3>Tools &amp; Technologies</h3>
+<div class="skill-list">
+<span class="skill">Python</span>
+<span class="skill">SQL</span>
+<span class="skill">Java</span>
+<span class="skill">JavaScript</span>
+<span class="skill">HTML5</span>
+<span class="skill">CSS3</span>
+<span class="skill">Pandas</span>
+<span class="skill">NumPy</span>
+<span class="skill">Excel</span>
+<span class="skill">Power BI</span>
+<span class="skill">Power Query</span>
+<span class="skill">DAX</span>
+<span class="skill">Matplotlib</span>
+<span class="skill">Seaborn</span>
+<span class="skill">Plotly</span>
+<span class="skill">Scikit-learn</span>
+<span class="skill">XGBoost</span>
+<span class="skill">TensorFlow</span>
+<span class="skill">PyTorch</span>
+<span class="skill">OpenCV</span>
+<span class="skill">Pillow</span>
+<span class="skill">NLTK</span>
+<span class="skill">spaCy</span>
+<span class="skill">Hugging Face</span>
+<span class="skill">TF-IDF</span>
+<span class="skill">Git</span>
+<span class="skill">GitHub</span>
+<span class="skill">Jupyter Notebook</span>
+<span class="skill">Google Colab</span>
+<span class="skill">VS Code</span>
+<span class="skill">PyCharm</span>
+<span class="skill">Flask</span>
+<span class="skill">FastAPI</span>
+<span class="skill">Streamlit</span>
+<span class="skill">Tkinter</span>
+<span class="skill">SQLite</span>
+<span class="skill">MySQL</span>
+<span class="skill">PostgreSQL</span>
+<span class="skill">Kaggle</span>
+<span class="skill">AWS Academy</span>
+</div>
+</div>
+<div class="card">
+<h3>AI &amp; Data Skills</h3>
+<ul>
+<li>Data Cleaning, Preprocessing &amp; Exploratory Data Analysis</li>
+<li>Missing Values, Duplicate Detection &amp; Data Validation</li>
+<li>Statistical Analysis &amp; Data Visualization</li>
+<li>Machine Learning Model Building &amp; Evaluation</li>
+<li>Feature Engineering &amp; Hyperparameter Tuning</li>
+<li>Computer Vision, Image Processing &amp; Face Recognition</li>
+<li>Natural Language Processing &amp; Arabic NLP</li>
+<li>Classification, Regression &amp; Clustering</li>
+<li>SQL Queries, Joins &amp; Database Operations</li>
+<li>Dashboard Development &amp; KPI Reporting</li>
+<li>Python Automation &amp; Application Development</li>
+<li>Flask Web Applications &amp; REST APIs</li>
+<li>Model Testing, Performance Metrics &amp; Documentation</li>
+<li>Git Version Control &amp; Collaborative Development</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="services">
+<div class="container">
+<h2 class="section-title">Offered Services</h2>
+<p class="section-subtitle">Practical data and Python services focused on accurate, organized, and useful results.</p>
+<div class="grid grid-2">
+<div class="card"><h3>Data Cleaning &amp; Preparation</h3><p>Cleaning, organizing, validating, and reviewing datasets, including missing values, duplicates, and inconsistencies.</p></div>
+<div class="card"><h3>Reports &amp; Dashboards</h3><p>Creating clear charts, analytical reports, and dashboards that communicate key findings.</p></div>
+<div class="card"><h3>Machine Learning</h3><p>Building baseline machine-learning models, evaluating performance, and explaining results.</p></div>
+<div class="card"><h3>Python &amp; Simple Web Apps</h3><p>Developing Python utilities and simple web applications using Flask and web technologies.</p></div>
+</div>
+</div>
+</section>
+<section id="projects">
+<div class="container">
+<h2 class="section-title">Selected Projects</h2>
+<p class="section-subtitle">A selection of projects across data analytics, machine learning, AI, and computer vision. Open any project to explore its workflow, technical skills, collaborators, and GitHub repository.</p>
+<div class="projects-grid">
+<article class="project-card">
+<div class="project-card-preview"><span>PROJECT 01</span><strong>EcoGuard — Forest Threat Sound Detection</strong><small>Python · Audio Processing · MFCC</small></div>
+<h3>1. EcoGuard — Forest Threat Sound Detection</h3>
+<p>An audio-based forest monitoring system that detects potential threats such as chainsaws, gunshots, and fire by comparing classical machine learning models with a deep learning approach.</p>
+<div class="tag-row"><span class="tag">Python</span><span class="tag">Audio Processing</span><span class="tag">MFCC</span><span class="tag">Scikit-learn</span></div>
+<div class="project-actions">
+<button class="project-btn" onclick="openDetailsModal('projectModal1')">View Details</button>
+</div>
+</article>
+<article class="project-card">
+<div class="project-card-preview"><span>PROJECT 02</span><strong>Online Retail Customer Analytics &amp; RFM Segmentation</strong><small>Python · Pandas / NumPy · EDA</small></div>
+<h3>2. Online Retail Customer Analytics &amp; RFM Segmentation</h3>
+<p>An e-commerce transaction analytics project that segments customers into actionable groups to support targeted marketing and customer retention.</p>
+<div class="tag-row"><span class="tag">Python</span><span class="tag">Pandas / NumPy</span><span class="tag">EDA</span><span class="tag">RFM Analysis</span></div>
+<div class="project-actions">
+<button class="project-btn" onclick="openDetailsModal('projectModal2')">View Details</button>
+</div>
+</article>
+<article class="project-card">
+<div class="project-card-preview"><span>PROJECT 03</span><strong>TruthLens — Arabic Fake News Detection</strong><small>Arabic NLP · NLTK · TF-IDF</small></div>
+<h3>3. TruthLens — Arabic Fake News Detection</h3>
+<p>An Arabic NLP application that compares machine learning, deep learning, and AraBERT models to classify news articles as reliable or potentially fake.</p>
+<div class="tag-row"><span class="tag">Arabic NLP</span><span class="tag">NLTK</span><span class="tag">TF-IDF</span><span class="tag">Linear SVM</span></div>
+<div class="project-actions">
+<button class="project-btn" onclick="openDetailsModal('projectModal4')">View Details</button>
+</div>
+</article>
+<article class="project-card">
+<div class="project-card-preview"><span>PROJECT 04</span><strong>Cyber Attack &amp; Intrusion Detection</strong><small>Python · UNSW-NB15 · Scikit-learn Pipeline</small></div>
+<h3>4. Cyber Attack &amp; Intrusion Detection</h3>
+<p>A binary network-traffic classifier that distinguishes normal connections from potential cyberattacks using the UNSW-NB15 dataset.</p>
+<div class="tag-row"><span class="tag">Python</span><span class="tag">UNSW-NB15</span><span class="tag">Scikit-learn Pipeline</span><span class="tag">RobustScaler</span></div>
+<div class="project-actions">
+<button class="project-btn" onclick="openDetailsModal('projectModal5')">View Details</button>
+</div>
+</article>
+<article class="project-card">
+<div class="project-card-preview"><span>PROJECT 05</span><strong>Medical Image Registration Using PSO</strong><small>Python · OpenCV · Particle Swarm Optimization</small></div>
+<h3>5. Medical Image Registration Using PSO</h3>
+<p>An image registration application that aligns two images by optimizing rotation, translation, and scale with Particle Swarm Optimization (PSO), with visual comparisons and alignment metrics.</p>
+<div class="tag-row"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Particle Swarm Optimization</span><span class="tag">Image Registration</span></div>
+<div class="project-actions">
+<button class="project-btn" onclick="openDetailsModal('projectModal7')">View Details</button>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section id="internships">
+<section class="container automation-focus" style="margin-top: 34px; margin-bottom: 34px;">
+<div class="section-heading">
+<p class="eyebrow">WORKFLOW AUTOMATION</p>
+<h2>Automation &amp; n8n</h2>
+<p>Connecting tools, APIs, and AI services into practical workflows that reduce repetitive work and keep processes consistent.</p>
+</div>
+<div class="services-grid">
+<article class="service-card">
+<div class="service-icon">⚙️</div>
+<h3>n8n Workflow Automation</h3>
+<p>Designing workflow logic, triggers, conditions, and integrations to automate repeatable tasks.</p>
+</article>
+<article class="service-card">
+<div class="service-icon">🔗</div>
+<h3>API &amp; Tool Integration</h3>
+<p>Connecting services through APIs and webhooks, with structured data handling and error-aware steps.</p>
+</article>
+<article class="service-card">
+<div class="service-icon">🤖</div>
+<h3>AI-Assisted Workflows</h3>
+<p>Exploring practical ways to connect AI capabilities with automated business and data workflows.</p>
+</article>
+</div>
+</section>
+<section id="certifications">
+      <div class="container">
+        <h2 class="section-title">Certifications & Training</h2>
+        <p class="section-subtitle">
+          Professional certificates and training across data analysis, design, artificial intelligence, and machine learning.
+        </p>
+        <div class="training-wrapper">
+          <div class="training-card featured">
+            <div class="training-badge">Data Analysis</div>
+            <h3>Power BI Training</h3>
+            <p>Completed Power BI training focused on building reports and dashboards for data analysis.</p>
+            <div class="training-meta">
+              <span><strong>Provider:</strong> NTI</span>
+              <span><strong>Field:</strong> Data Analysis</span>
+              <span><strong>Focus:</strong> Power BI, Reports, Dashboards</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn" onclick="openCertificateModal('certificateModal1')">View Certificate</button>
+            </div>
+          </div>
+          <div class="training-card">
+            <div class="training-badge">Data Analysis</div>
+            <h3>Data Analysis</h3>
+            <p>Coursework focused on core data analysis concepts and interpreting data.</p>
+            <div class="training-meta">
+              <span><strong>Provider:</strong> Maaref</span>
+              <span><strong>Field:</strong> Data Analysis</span>
+              <span><strong>Focus:</strong> Data Analysis, Data Interpretation</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn" onclick="openCertificateModal('certificateModal3')">View Certificate</button>
+            </div>
+          </div>
+          <div class="training-card">
+            <div class="training-badge">Machine Learning</div>
+            <h3>Machine Learning</h3>
+            <p>Learning track covering machine learning concepts and model development.</p>
+            <div class="training-meta">
+              <span><strong>Provider:</strong> IBM</span>
+              <span><strong>Field:</strong> Machine Learning</span>
+              <span><strong>Focus:</strong> Machine Learning, Model Development</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn" onclick="openCertificateModal('certificateModal4')">View Certificate</button>
+            </div>
+          </div>
+          <div class="training-card">
+            <div class="training-badge">Artificial Intelligence</div>
+            <h3>Artificial Intelligence Fundamentals</h3>
+            <p>Fundamentals of artificial intelligence and its practical applications.</p>
+            <div class="training-meta">
+              <span><strong>Provider:</strong> IBM SkillsBuild</span>
+              <span><strong>Field:</strong> Artificial Intelligence</span>
+              <span><strong>Focus:</strong> AI Fundamentals, AI Applications</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn" onclick="openCertificateModal('certificateModal5')">View Certificate</button>
+            </div>
+          </div>
+          <div class="training-card">
+            <div class="training-badge">Data Science & Machine Learning</div>
+            <h3>Data Science & Machine Learning</h3>
+            <p>Learning track covering data science and machine learning foundations.</p>
+            <div class="training-meta">
+              <span><strong>Provider:</strong> Edraak</span>
+              <span><strong>Field:</strong> Data Science & Machine Learning</span>
+              <span><strong>Focus:</strong> Data Science, Machine Learning</span>
+            </div>
+            <div class="project-actions">
+              <button class="project-btn" onclick="openCertificateModal('certificateModal6')">View Certificate</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+<section id="experience">
+<div class="container">
+<h2 class="section-title">Work Experience</h2>
+<p class="section-subtitle">
+          Freelance experience in AI data annotation, data quality, and preparing reliable datasets, alongside hands-on development of AI and data science projects.
+        </p>
+<div class="experience-layout">
+<div class="experience-summary">
+<h3>Freelance AI Data Annotator</h3>
+<p>
+              Worked as a freelancer on multiple platforms in AI data annotation tasks, helping improve datasets used for
+              training and evaluating machine learning models.
+            </p>
+<div class="experience-points">
+<div class="experience-point">
+<span>1</span>
+<div>Annotated, reviewed, and checked data quality for AI-related tasks.</div>
+</div>
+<div class="experience-point">
+<span>2</span>
+<div>Worked with structured guidelines and maintained consistency across tasks.</div>
+</div>
+<div class="experience-point">
+<span>3</span>
+<div>Gained practical experience in data labeling, evaluation, and accuracy-focused work.</div>
+</div>
+</div>
+<div class="experience-tags">
+<span class="tag">AI Data Annotation</span>
+<span class="tag">Data Labeling</span>
+<span class="tag">Quality Review</span>
+<span class="tag">Freelance</span>
+</div>
+</div>
+<div class="platform-grid">
+<div class="platform-card">
+<div class="platform-head">
+<div class="platform-logo">
+<svg role="img" viewbox="0 0 24 24">
+<path d="M12 2 3 7v10l9 5 9-5V7l-9-5Zm0 2.3 6.7 3.7L12 11.7 5.3 8 12 4.3ZM5 9.8l6 3.3v6.1l-6-3.3V9.8Zm8 9.4v-6.1l6-3.3v6.1l-6 3.3Z"></path>
+</svg>
+</div>
+<div>
+<h3>AI Annotation Platforms</h3>
+<small>Freelance Work</small>
+</div>
+</div>
+<p>Completed annotation and review tasks for AI datasets through different online platforms.</p>
+</div>
+<div class="platform-card">
+<div class="platform-head">
+<div class="platform-logo">
+<svg role="img" viewbox="0 0 24 24">
+<path d="M9 3h6a2 2 0 0 1 2 2v1h2a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2V5a2 2 0 0 1 2-2Zm0 3h6V5H9v1Zm3 4 6 3.5V16l-6 3.5L6 16v-2.5L12 10Zm0 2.3-3.8 2.2L12 16.7l3.8-2.2L12 12.3Z"></path>
+</svg>
+</div>
+<div>
+<h3>Data Quality Tasks</h3>
+<small>Review &amp; Validation</small>
+</div>
+</div>
+<p>Focused on accuracy, consistency, and following task-specific labeling instructions.</p>
+</div>
+<div class="platform-card">
+<div class="platform-head">
+<div class="platform-logo">
+<svg role="img" viewbox="0 0 24 24">
+<path d="M12 2a7 7 0 0 0-7 7c0 2.4 1.2 4.5 3 5.8V18a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-3.2A7 7 0 0 0 12 2Zm2 14h-4v-2.3l-.5-.3A5 5 0 1 1 14.5 13l-.5.3V16Zm-4 6h4v-1h-4v1Z"></path>
+</svg>
+</div>
+<div>
+<h3>AI Training Support</h3>
+<small>Dataset Preparation</small>
+</div>
+</div>
+<p>Helped prepare cleaner labeled data that can support model training and evaluation.</p>
+</div>
+<div class="platform-card">
+<div class="platform-head">
+<div class="platform-logo">
+<svg role="img" viewbox="0 0 24 24">
+<path d="M12 1 3 5v6c0 5.6 3.8 10.7 9 12 5.2-1.3 9-6.4 9-12V5l-9-4Zm0 2.2 7 3.1V11c0 4.4-2.9 8.5-7 9.8-4.1-1.3-7-5.4-7-9.8V6.3l7-3.1Zm-1 12.3 6-6-1.4-1.4L11 12.7 8.4 10.1 7 11.5l4 4Z"></path>
+</svg>
+</div>
+<div>
+<h3>Guideline-Based Work</h3>
+<small>Consistency &amp; Accuracy</small>
+</div>
+</div>
+<p>Applied detailed instructions and quality standards to deliver consistent annotation results.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="workflow">
+<div class="container">
+<h2 class="section-title">My Analysis Workflow</h2>
+<p class="section-subtitle">The process I usually follow in data analysis projects.</p>
+<div class="timeline">
+<div class="timeline-item">
+<h3>1. Understand the Problem</h3>
+<p>Define the business question, required KPIs, and expected outcome.</p>
+</div>
+<div class="timeline-item">
+<h3>2. Collect &amp; Explore Data</h3>
+<p>Inspect columns, data types, missing values, duplicates, and relationships.</p>
+</div>
+<div class="timeline-item">
+<h3>3. Clean &amp; Prepare Data</h3>
+<p>Fix incorrect formats, remove duplicates, handle nulls, and prepare the data model.</p>
+</div>
+<div class="timeline-item">
+<h3>4. Analyze &amp; Visualize</h3>
+<p>Use SQL, Excel, Power BI, Tableau, or Python to create insights and dashboards.</p>
+</div>
+<div class="timeline-item">
+<h3>5. Present Insights</h3>
+<p>Explain results clearly and connect visuals to useful recommendations.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="contact">
+<div class="container">
+<div class="contact-box">
+<h2 class="section-title">Let's Connect</h2>
+<p>
+            Available for freelance projects, client collaborations, and practical AI and data science work — including data analysis, machine learning, Python automation, and intelligent applications.
+          </p>
+<div aria-label="Contact links" class="contact-icons">
+<a aria-label="Email" class="contact-icon" href="mailto:seifgamal249@gmail.com" title="Email">
+<svg role="img" viewbox="0 0 24 24">
+<path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"></path>
+</svg>
+</a>
+<a aria-label="WhatsApp" class="contact-icon" href="https://wa.me/201033678792" target="_blank" title="WhatsApp">
+<svg role="img" viewbox="0 0 24 24">
+<path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.33 4.95L2 22l5.27-1.38a9.86 9.86 0 0 0 4.77 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.46 17.51 2 12.04 2Zm5.76 14.16c-.24.67-1.39 1.28-1.95 1.36-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.93-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.59-.36.79-.36h.57c.18 0 .43-.07.67.51.24.58.83 2.01.9 2.16.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.31.38-.43.51-.14.14-.29.31-.12.6.17.29.76 1.25 1.63 2.03 1.12 1 2.07 1.31 2.36 1.46.29.14.46.12.62-.07.19-.22.72-.84.91-1.13.19-.29.38-.24.65-.14.26.1 1.68.79 1.97.94.29.14.48.22.55.34.07.12.07.7-.17 1.37Z"></path>
+</svg>
+</a>
+<a aria-label="GitHub" class="contact-icon" href="https://github.com/YOUR-GITHUB-USERNAME" rel="noopener" target="_blank" title="GitHub">
+<svg role="img" viewbox="0 0 24 24">
+<path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.11.79-.25.79-.56v-2.14c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.18.91-.25 1.89-.38 2.86-.38.97 0 1.95.13 2.86.38 2.19-1.49 3.15-1.18 3.15-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.07.78 2.15v3.18c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"></path>
+</svg>
+</a>
+<a aria-label="LinkedIn" class="contact-icon" href="https://www.linkedin.com/in/mahmoud-mansour5" target="_blank" title="LinkedIn">
+<svg role="img" viewbox="0 0 24 24">
+<path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S.02 4.88.02 3.5 1.14 1 2.5 1s2.48 1.12 2.48 2.5ZM.37 8.01h4.25V23H.37V8.01ZM8.09 8.01h4.07v2.05h.06c.57-1.08 1.96-2.22 4.04-2.22 4.32 0 5.12 2.84 5.12 6.53V23h-4.25v-7.64c0-1.82-.03-4.17-2.54-4.17-2.55 0-2.94 1.99-2.94 4.04V23H7.4V8.01h.69Z"></path>
+</svg>
+</a>
+</div>
+<div class="contact-mini-text">
+            Click an icon to contact me directly
+          </div>
+</div>
+</div>
+</section>
+<div aria-hidden="true" class="details-modal" id="projectModal1">
+<div class="details-content">
+<button aria-label="Close details" class="modal-close" onclick="closeDetailsModal('projectModal1')">×</button>
+<p class="project-number">PROJECT 01 / 08</p>
+<h2>EcoGuard — Forest Threat Sound Detection</h2>
+<p>An audio-based forest monitoring system that detects potential threats such as chainsaws, gunshots, and fire by comparing classical machine learning models with a deep learning approach.</p>
+<div class="project-detail-actions">
+<a aria-label="Open project repository on GitHub" class="project-btn github-project-link" href="https://github.com/israa101/forest-threat-detection" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.07c-3.1.67-3.75-1.31-3.75-1.31-.5-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.59 1.21 3.22.93.1-.72.39-1.21.7-1.49-2.47-.28-5.07-1.24-5.07-5.5 0-1.21.43-2.2 1.15-2.97-.12-.29-.5-1.41.11-2.94 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.65.11 2.94.72.77 1.15 1.76 1.15 2.97 0 4.27-2.6 5.22-5.08 5.49.4.35.75 1.02.75 2.06V22c0 .29.2.63.76.52A11.1 11.1 0 0 0 12 .9Z" fill="currentColor"></path></svg>
+            View on GitHub
+          </a>
+</div>
+<div class="details-layout">
+<div class="details-box">
+<h3 class="workflow-heading">Project Workflow</h3>
+<ol class="workflow-steps"><li>Combine audio from eight source datasets</li><li>Clean and standardize audio to mono, 16 kHz, and 3 seconds</li><li>Extract MFCC and spectral features or log-mel spectrograms</li><li>Train and compare six classical models with a CRNN model</li><li>Evaluate results and display predictions and alerts in Streamlit</li></ol>
+</div>
+<div class="details-box">
+<h3>Skills &amp; Technologies</h3>
+<div class="tag-row"><span class="tag">Python</span><span class="tag">Audio Processing</span><span class="tag">MFCC</span><span class="tag">Scikit-learn</span><span class="tag">CRNN / BiGRU</span><span class="tag">Streamlit</span></div>
+<h3 class="team-heading">Team Members</h3>
+<div class="team-members"><span class="team-member"><b>Mahmoud Mansour</b></span><span class="team-member"><b>Israa Hamdy</b></span><span class="team-member"><b>Sajy</b></span><span class="team-member"><b>Jomanah</b></span><span class="team-member"><b>Mohamed Mansour</b></span></div>
+</div>
+</div>
+<h3 class="gallery-title">Project Screenshots</h3>
+<div class="project-gallery"><div class="project-image-slot"><img alt="Project screenshot 1 — EcoGuard — Forest Threat Sound Detection" onerror="this.style.display='none'" src="assets/projects/project-1-1.svg"/><span>Screenshot 1 — Add file: <code>assets/projects/project-1-1.svg</code></span></div><div class="project-image-slot"><img alt="Project screenshot 2 — EcoGuard — Forest Threat Sound Detection" onerror="this.style.display='none'" src="assets/projects/project-1-2.svg"/><span>Screenshot 2 — Add file: <code>assets/projects/project-1-2.svg</code></span></div></div>
+</div>
+</div>
+<div aria-hidden="true" class="details-modal" id="projectModal2">
+<div class="details-content">
+<button aria-label="Close details" class="modal-close" onclick="closeDetailsModal('projectModal2')">×</button>
+<p class="project-number">PROJECT 02 / 08</p>
+<h2>Online Retail Customer Analytics &amp; RFM Segmentation</h2>
+<p>An e-commerce transaction analytics project that segments customers into actionable groups to support targeted marketing and customer retention.</p>
+<div class="project-detail-actions">
+<a aria-label="Open project repository on GitHub" class="project-btn github-project-link" href="https://github.com/israa101/Online-Retail-Customer-Analytics-RFM-Segmentation" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.07c-3.1.67-3.75-1.31-3.75-1.31-.5-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.59 1.21 3.22.93.1-.72.39-1.21.7-1.49-2.47-.28-5.07-1.24-5.07-5.5 0-1.21.43-2.2 1.15-2.97-.12-.29-.5-1.41.11-2.94 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.65.11 2.94.72.77 1.15 1.76 1.15 2.97 0 4.27-2.6 5.22-5.08 5.49.4.35.75 1.02.75 2.06V22c0 .29.2.63.76.52A11.1 11.1 0 0 0 12 .9Z" fill="currentColor"></path></svg>
+            View on GitHub
+          </a>
+</div>
+<div class="details-layout">
+<div class="details-box">
+<h3 class="workflow-heading">Project Workflow</h3>
+<ol class="workflow-steps"><li>Clean 541K+ transaction rows and validate returns</li><li>Analyze sales, customers, products, and time trends</li><li>Calculate Recency, Frequency, and Monetary metrics per customer</li><li>Scale features, compare clustering methods, and select four K-Means segments</li><li>Profile customer segments and recommend marketing strategies</li></ol>
+</div>
+<div class="details-box">
+<h3>Skills &amp; Technologies</h3>
+<div class="tag-row"><span class="tag">Python</span><span class="tag">Pandas / NumPy</span><span class="tag">EDA</span><span class="tag">RFM Analysis</span><span class="tag">PCA</span><span class="tag">K-Means</span><span class="tag">Scikit-learn</span></div>
+<h3 class="team-heading">Team Members</h3>
+<div class="team-members"><span class="team-member"><b>Mahmoud Mansour</b></span><span class="team-member"><b>Israa Hamdy</b></span><span class="team-member"><b>Jumana Khaled</b></span></div>
+</div>
+</div>
+<h3 class="gallery-title">Project Screenshots</h3>
+<div class="project-gallery"><div class="project-image-slot"><img alt="Project screenshot 1 — Online Retail Customer Analytics &amp; RFM Segmentation" onerror="this.style.display='none'" src="assets/projects/project-2-1.svg"/><span>Screenshot 1 — Add file: <code>assets/projects/project-2-1.svg</code></span></div><div class="project-image-slot"><img alt="Project screenshot 2 — Online Retail Customer Analytics &amp; RFM Segmentation" onerror="this.style.display='none'" src="assets/projects/project-2-2.svg"/><span>Screenshot 2 — Add file: <code>assets/projects/project-2-2.svg</code></span></div></div>
+</div>
+</div>
+<div aria-hidden="true" class="details-modal" id="projectModal4">
+<div class="details-content">
+<button aria-label="Close details" class="modal-close" onclick="closeDetailsModal('projectModal4')">×</button>
+<p class="project-number">PROJECT 03 / 08</p>
+<h2>TruthLens — Arabic Fake News Detection</h2>
+<p>An Arabic NLP application that compares machine learning, deep learning, and AraBERT models to classify news articles as reliable or potentially fake.</p>
+<div class="project-detail-actions">
+<a aria-label="Open project repository on GitHub" class="project-btn github-project-link" href="https://github.com/israa101/Arabic_Fake_News_Detector" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.07c-3.1.67-3.75-1.31-3.75-1.31-.5-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.59 1.21 3.22.93.1-.72.39-1.21.7-1.49-2.47-.28-5.07-1.24-5.07-5.5 0-1.21.43-2.2 1.15-2.97-.12-.29-.5-1.41.11-2.94 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.65.11 2.94.72.77 1.15 1.76 1.15 2.97 0 4.27-2.6 5.22-5.08 5.49.4.35.75 1.02.75 2.06V22c0 .29.2.63.76.52A11.1 11.1 0 0 0 12 .9Z" fill="currentColor"></path></svg>
+            View on GitHub
+          </a>
+</div>
+<div class="details-layout">
+<div class="details-box">
+<h3 class="workflow-heading">Project Workflow</h3>
+<ol class="workflow-steps"><li>Extract articles and labels from JSON files</li><li>Normalize Arabic text, remove stopwords, and apply stemming</li><li>Balance classes and train classical models</li><li>Train a Bi-LSTM and fine-tune AraBERT</li><li>Compare model performance and integrate results into Streamlit</li></ol>
+</div>
+<div class="details-box">
+<h3>Skills &amp; Technologies</h3>
+<div class="tag-row"><span class="tag">Arabic NLP</span><span class="tag">NLTK</span><span class="tag">TF-IDF</span><span class="tag">Linear SVM</span><span class="tag">Random Forest</span><span class="tag">Bi-LSTM</span><span class="tag">AraBERT</span><span class="tag">Hugging Face</span><span class="tag">Streamlit</span></div>
+<h3 class="team-heading">Team Members</h3>
+<div class="team-members"><span class="team-member"><b>Mahmoud Mansour</b></span><span class="team-member"><b>Israa Hamdy</b></span><span class="team-member"><b>Lojain Hussien</b></span><span class="team-member"><b>Omnia Mahmoud</b></span><span class="team-member"><b>Mohamed Reda</b></span></div>
+</div>
+</div>
+<h3 class="gallery-title">Project Screenshots</h3>
+<div class="project-gallery"><div class="project-image-slot"><img alt="Project screenshot 1 — TruthLens — Arabic Fake News Detection" onerror="this.style.display='none'" src="assets/projects/project-4-1.svg"/><span>Screenshot 1 — Add file: <code>assets/projects/project-4-1.svg</code></span></div><div class="project-image-slot"><img alt="Project screenshot 2 — TruthLens — Arabic Fake News Detection" onerror="this.style.display='none'" src="assets/projects/project-4-2.svg"/><span>Screenshot 2 — Add file: <code>assets/projects/project-4-2.svg</code></span></div></div>
+</div>
+</div>
+<div aria-hidden="true" class="details-modal" id="projectModal5">
+<div class="details-content">
+<button aria-label="Close details" class="modal-close" onclick="closeDetailsModal('projectModal5')">×</button>
+<p class="project-number">PROJECT 04 / 08</p>
+<h2>Cyber Attack &amp; Intrusion Detection</h2>
+<p>A binary network-traffic classifier that distinguishes normal connections from potential cyberattacks using the UNSW-NB15 dataset.</p>
+<div class="project-detail-actions">
+<a aria-label="Open project repository on GitHub" class="project-btn github-project-link" href="https://github.com/israa101/Cyber_Attack_Detection/tree/main" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.07c-3.1.67-3.75-1.31-3.75-1.31-.5-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.59 1.21 3.22.93.1-.72.39-1.21.7-1.49-2.47-.28-5.07-1.24-5.07-5.5 0-1.21.43-2.2 1.15-2.97-.12-.29-.5-1.41.11-2.94 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.65.11 2.94.72.77 1.15 1.76 1.15 2.97 0 4.27-2.6 5.22-5.08 5.49.4.35.75 1.02.75 2.06V22c0 .29.2.63.76.52A11.1 11.1 0 0 0 12 .9Z" fill="currentColor"></path></svg>
+            View on GitHub
+          </a>
+</div>
+<div class="details-layout">
+<div class="details-box">
+<h3 class="workflow-heading">Project Workflow</h3>
+<ol class="workflow-steps"><li>Split training and test sets before preprocessing to prevent data leakage</li><li>Perform exploratory analysis and handle outliers</li><li>Scale numerical features and encode categorical features</li><li>Select features and reduce dimensionality with SelectKBest and PCA</li><li>Tune and evaluate LinearSVC, then deploy with Streamlit</li></ol>
+</div>
+<div class="details-box">
+<h3>Skills &amp; Technologies</h3>
+<div class="tag-row"><span class="tag">Python</span><span class="tag">UNSW-NB15</span><span class="tag">Scikit-learn Pipeline</span><span class="tag">RobustScaler</span><span class="tag">SelectKBest</span><span class="tag">PCA</span><span class="tag">LinearSVC</span><span class="tag">GridSearchCV</span><span class="tag">Streamlit</span></div>
+<h3 class="team-heading">Project Team</h3>
+<div class="team-members"><span class="team-member"><b>Mahmoud Mansour</b></span><span class="team-member"><b>Israa Hamdy</b></span></div>
+</div>
+</div>
+<h3 class="gallery-title">Project Screenshots</h3>
+<div class="project-gallery"><div class="project-image-slot"><img alt="Project screenshot 1 — Cyber Attack &amp; Intrusion Detection" onerror="this.style.display='none'" src="assets/projects/project-5-1.svg"/><span>Screenshot 1 — Add file: <code>assets/projects/project-5-1.svg</code></span></div><div class="project-image-slot"><img alt="Project screenshot 2 — Cyber Attack &amp; Intrusion Detection" onerror="this.style.display='none'" src="assets/projects/project-5-2.svg"/><span>Screenshot 2 — Add file: <code>assets/projects/project-5-2.svg</code></span></div></div>
+</div>
+</div>
+<div aria-hidden="true" class="details-modal" id="projectModal7">
+<div class="details-content">
+<button aria-label="Close details" class="modal-close" onclick="closeDetailsModal('projectModal7')">×</button>
+<p class="project-number">PROJECT 05 / 08</p>
+<h2>Medical Image Registration Using PSO</h2>
+<p>An image registration application that aligns two images by optimizing rotation, translation, and scale with Particle Swarm Optimization (PSO), with visual comparisons and alignment metrics.</p>
+<div class="project-detail-actions">
+<a aria-label="Open project repository on GitHub" class="project-btn github-project-link" href="https://github.com/israa101/image_registration_By-pso-/tree/main" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.07c-3.1.67-3.75-1.31-3.75-1.31-.5-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.59 1.21 3.22.93.1-.72.39-1.21.7-1.49-2.47-.28-5.07-1.24-5.07-5.5 0-1.21.43-2.2 1.15-2.97-.12-.29-.5-1.41.11-2.94 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.65.11 2.94.72.77 1.15 1.76 1.15 2.97 0 4.27-2.6 5.22-5.08 5.49.4.35.75 1.02.75 2.06V22c0 .29.2.63.76.52A11.1 11.1 0 0 0 12 .9Z" fill="currentColor"></path></svg>
+            View on GitHub
+          </a>
+</div>
+<div class="details-layout">
+<div class="details-box">
+<h3 class="workflow-heading">Project Workflow</h3>
+<ol class="workflow-steps"><li>Load the images and standardize their dimensions</li><li>Apply geometric transformations to create registration test cases</li><li>Represent each particle with rotation, horizontal and vertical translation, and scale parameters</li><li>Optimize the transformation with PSO and multiple similarity metrics</li><li>Display the registered image, difference map, convergence curve, and a PDF report</li></ol>
+</div>
+<div class="details-box">
+<h3>Skills &amp; Technologies</h3>
+<div class="tag-row"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Particle Swarm Optimization</span><span class="tag">Image Registration</span><span class="tag">SSIM</span><span class="tag">MSE</span><span class="tag">NCC</span><span class="tag">Mutual Information</span><span class="tag">PyQt5</span></div>
+<h3 class="team-heading">Team Members</h3>
+<div class="team-members"><span class="team-member"><b>Mahmoud Mansour</b></span><span class="team-member"><b>Israa Hamdy</b></span><span class="team-member"><b>Nour Emad Abdullah</b></span><span class="team-member"><b>Omnia Mahmoud El-Ashry</b></span><span class="team-member"><b>Mostafa Mohamed Gamal</b></span></div>
+</div>
+</div>
+<h3 class="gallery-title">Project Screenshots</h3>
+<div class="project-gallery"><div class="project-image-slot"><img alt="Project screenshot 1 — Medical Image Registration Using PSO" onerror="this.style.display='none'" src="assets/projects/project-7-1.svg"/><span>Screenshot 1 — Add file: <code>assets/projects/project-7-1.svg</code></span></div><div class="project-image-slot"><img alt="Project screenshot 2 — Medical Image Registration Using PSO" onerror="this.style.display='none'" src="assets/projects/project-7-2.svg"/><span>Screenshot 2 — Add file: <code>assets/projects/project-7-2.svg</code></span></div></div>
+</div>
+</div>
+</main>
+<footer>
+<div class="container">
+      © 2026 Mahmoud Mansour. All Rights Reserved.
+    </div>
+</footer>
+<script>
+    function openDetailsModal(id) {
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      modal.classList.add("active");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeDetailsModal(id) {
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      modal.classList.remove("active");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("click", function(event) {
+      if (event.target.classList.contains("details-modal")) {
+        closeDetailsModal(event.target.id);
+      }
+    });
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        document.querySelectorAll(".details-modal.active").forEach(function(modal) {
+          closeDetailsModal(modal.id);
+        });
+      }
+    });
+  </script>
+<div aria-hidden="true" class="certificate-modal" id="certificateModal1" onclick="if(event.target===this) closeCertificateModal('certificateModal1')">
+<div class="certificate-content">
+<button aria-label="Close certificate" class="modal-close" onclick="closeCertificateModal('certificateModal1')">×</button>
+<h2>Power BI Training</h2>
+<p>NTI</p>
+<img alt="Power BI Training certificate" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="assets/certificates/certificate-01-placeholder.svg"/>
+<p class="certificate-placeholder" style="display:none; padding:24px; border:1px dashed var(--border); border-radius:16px;">Add the certificate image at <strong>assets/certificates/certificate-01-placeholder.svg</strong> to display it here.</p>
+</div>
+</div>
+<div aria-hidden="true" class="certificate-modal" id="certificateModal2" onclick="if(event.target===this) closeCertificateModal('certificateModal2')">
+<div class="certificate-content">
+<button aria-label="Close certificate" class="modal-close" onclick="closeCertificateModal('certificateModal2')">×</button>
+<h2>Data Analysis</h2>
+<p>Maaref</p>
+<img alt="Data Analysis certificate" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="assets/certificates/certificate-02-placeholder.svg"/>
+<p class="certificate-placeholder" style="display:none; padding:24px; border:1px dashed var(--border); border-radius:16px;">Add the certificate image at <strong>assets/certificates/certificate-02-placeholder.svg</strong> to display it here.</p>
+</div>
+</div>
+<div aria-hidden="true" class="certificate-modal" id="certificateModal3" onclick="if(event.target===this) closeCertificateModal('certificateModal2')">
+<div class="certificate-content">
+<button aria-label="Close certificate" class="modal-close" onclick="closeCertificateModal('certificateModal2')">×</button>
+<h2>Machine Learning</h2>
+<p>IBM</p>
+<img alt="Machine Learning certificate" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="assets/certificates/certificate-03-placeholder.svg"/>
+<p class="certificate-placeholder" style="display:none; padding:24px; border:1px dashed var(--border); border-radius:16px;">Add the certificate image at <strong>assets/certificates/certificate-03-placeholder.svg</strong> to display it here.</p>
+</div>
+</div>
+<div aria-hidden="true" class="certificate-modal" id="certificateModal4" onclick="if(event.target===this) closeCertificateModal('certificateModal2')">
+<div class="certificate-content">
+<button aria-label="Close certificate" class="modal-close" onclick="closeCertificateModal('certificateModal2')">×</button>
+<h2>Artificial Intelligence Fundamentals</h2>
+<p>IBM SkillsBuild</p>
+<img alt="Artificial Intelligence Fundamentals certificate" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="assets/certificates/certificate-04-placeholder.svg"/>
+<p class="certificate-placeholder" style="display:none; padding:24px; border:1px dashed var(--border); border-radius:16px;">Add the certificate image at <strong>assets/certificates/certificate-04-placeholder.svg</strong> to display it here.</p>
+</div>
+</div>
+<div aria-hidden="true" class="certificate-modal" id="certificateModal5" onclick="if(event.target===this) closeCertificateModal('certificateModal2')">
+<div class="certificate-content">
+<button aria-label="Close certificate" class="modal-close" onclick="closeCertificateModal('certificateModal2')">×</button>
+<h2>Data Science &amp; Machine Learning</h2>
+<p>Edraak</p>
+<img alt="Data Science &amp; Machine Learning certificate" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" src="assets/certificates/certificate-05-placeholder.svg"/>
+<p class="certificate-placeholder" style="display:none; padding:24px; border:1px dashed var(--border); border-radius:16px;">Add the certificate image at <strong>assets/certificates/certificate-03-placeholder.svg</strong> to display it here.</p>
+</div>
+</div>
+<script>
+    function openCertificateModal(id) {
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      modal.classList.add("active");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeCertificateModal(id) {
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      modal.classList.remove("active");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("click", function(event) {
+      if (event.target.classList.contains("certificate-modal")) {
+        closeCertificateModal(event.target.id);
+      }
+    });
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        document.querySelectorAll(".certificate-modal.active").forEach(function(modal) {
+          closeCertificateModal(modal.id);
+        });
+      }
+    });
+  </script>
+
+\n  <script>
+    // Light mode is the default. Visitors can switch to dark mode if they prefer.
+    (function () {
+      const themeButton = document.getElementById('themeToggle');
+      const stored = localStorage.getItem('israa-theme');
+      const initialTheme = stored === 'dark' ? 'dark' : 'light';
+      function setTheme(theme) {
+        document.documentElement.dataset.theme = theme;
+        themeButton.textContent = theme === 'dark' ? 'Light mode' : 'Dark mode';
+        localStorage.setItem('israa-theme', theme);
+      }
+      setTheme(initialTheme);
+      themeButton.addEventListener('click', () => {
+        setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+      });
+    })();
+  </script>
+
+<div id="certificateModal1" class="certificate-modal" aria-hidden="true" onclick="if(event.target===this) closeCertificateModal('certificateModal1')">
+      <div class="certificate-content">
+        <button class="modal-close" aria-label="Close certificate" onclick="closeCertificateModal('certificateModal1')">&times;</button>
+        <h2>Power BI Training</h2>
+        <p>NTI</p>
+        <img src="assets/certificates/certificate-01.jpg" alt="Power BI Training certificate" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <p class="certificate-placeholder" style="display:none; padding:24px; border:1px dashed var(--border); border-radius:16px;">Add the certificate image at <strong>assets/certificates/certificate-01.jpg</strong> to display it here.</p>
+      </div>
+    </div>
+    <div <div id="certificateModal3" class="certificate-modal" aria-hidden="true" onclick="if(event.target===this) closeCertificateModal('certificateModal3')">
+      <div class="certificate-content">
+        <button class="modal-close" aria-label="Close certificate" onclick="closeCertificateModal('certificateModal3')">&times;</button>
+        <h2>Data Analysis</h2>
+        <p>Maaref</p>
+        <img src="assets/certificates/certificate-03.jpg" alt="Data Analysis certificate" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <p class="certificate-placeholder" style="display:none; padding:24px; border:1px dashed var(--border); border-radius:16px;">Add the certificate image at <strong>assets/certificates/certificate-03.jpg</strong> to display it here.</p>
+      </div>
+    </div>
+    <div id="certificateModal4" class="certificate-modal" aria-hidden="true" onclick="if(event.target===this) closeCertificateModal('certificateModal4')">
+      <div class="certificate-content">
+        <button class="modal-close" aria-label="Close certificate" onclick="closeCertificateModal('certificateModal4')">&times;</button>
+        <h2>Machine Learning</h2>
+        <p>IBM</p>
+        <img src="assets/certificates/certificate-04.jpg" alt="Machine Learning certificate" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <p class="certificate-placeholder" style="display:none; padding:24px; border:1px dashed var(--border); border-radius:16px;">Add the certificate image at <strong>assets/certificates/certificate-04.jpg</strong> to display it here.</p>
+      </div>
+    </div>
+    <div id="certificateModal5" class="certificate-modal" aria-hidden="true" onclick="if(event.target===this) closeCertificateModal('certificateModal5')">
+      <div class="certificate-content">
+        <button class="modal-close" aria-label="Close certificate" onclick="closeCertificateModal('certificateModal5')">&times;</button>
+        <h2>Artificial Intelligence Fundamentals</h2>
+        <p>IBM SkillsBuild</p>
+        <img src="assets/certificates/certificate-05.jpg" alt="Artificial Intelligence Fundamentals certificate" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <p class="certificate-placeholder" style="display:none; padding:24px; border:1px dashed var(--border); border-radius:16px;">Add the certificate image at <strong>assets/certificates/certificate-05.jpg</strong> to display it here.</p>
+      </div>
+    </div>
+    <div id="certificateModal6" class="certificate-modal" aria-hidden="true" onclick="if(event.target===this) closeCertificateModal('certificateModal6')">
+      <div class="certificate-content">
+        <button class="modal-close" aria-label="Close certificate" onclick="closeCertificateModal('certificateModal6')">&times;</button>
+        <h2>Data Science & Machine Learning</h2>
+        <p>Edraak</p>
+        <img src="assets/certificates/certificate-06.jpg" alt="Data Science & Machine Learning certificate" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <p class="certificate-placeholder" style="display:none; padding:24px; border:1px dashed var(--border); border-radius:16px;">Add the certificate image at <strong>assets/certificates/certificate-06.jpg</strong> to display it here.</p>
+      </div>
+    </div>
+
+  
+<script>
+function openCertificateModal(id) {
+  const modal = document.getElementById(id);
+  if (!modal) return;
+  modal.classList.add("active");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+function closeCertificateModal(id) {
+  const modal = document.getElementById(id);
+  if (!modal) return;
+  modal.classList.remove("active");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+document.addEventListener("click", function(event) {
+  if (event.target.classList.contains("certificate-modal")) closeCertificateModal(event.target.id);
+});
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") document.querySelectorAll(".certificate-modal.active").forEach(function(modal) { closeCertificateModal(modal.id); });
+});
+</script>
+
+</body>
+</html>
